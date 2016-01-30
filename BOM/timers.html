@@ -21,7 +21,8 @@
       }
 
       get("clear").onclick = function() {
-        
+        window.clearTimeout(timerID);
+        js.log("clearTimeout");
       }
     </script>
   </body>
