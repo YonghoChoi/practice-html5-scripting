@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="openID">open() 실행</button>
+    <script type="text/javascript">
+        var clickNode = get("openID");
+        clickNode.onclick = function() {
+          document.open();
+          document.write("<h1>open()과 write() 실행</h1>");
+          document.writeln("<h2>writeln</h2>");
+          document.close();
+        }
+    </script>
+  </body>
+</html>

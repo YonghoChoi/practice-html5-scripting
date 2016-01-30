@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="text" id=id1>
+    <input type="text" id=id2>
+    <div id=id3></div>
+    <script type="text/javascript">
+      var el = get("id2");
+      el.focus();
+
+      js.log("activeElement : ", document.activeElement);
+      js.log("hasFocus() : ", document.hasFocus());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <img src="../images/1.png" alt="">축구</img>
+    <img src="../images/2.png" alt="">농구</img>
+
+    <label><input type="radio" name=sports>축구</label>
+    <label><input type="radio" name=sports checked>농구</label>
+    <label><input type="radio" name=sports>수영</label>
+
+    <script type="text/javascript">
+      js.log("dir : ", document.dir);
+      js.log("head.nodeName : ", document.head.nodeName);
+      js.log("title : ", document.title);
+      js.log("body.nodeName : ", document.body.nodeName);
+      js.log("currentScript : ", document.currentScript);
+
+      var nodes = document.images;
+      for(var k = 0; k < node.length; k++) {
+        js.log("nodes[k].nodeName : ", nodes[k].nodeName);
+      }
+      nodes = document.getElementsByName("sports");
+      for(var k = 0; k < nodes.length; k++) {
+        js.log("nodes[k].type : ", nodes[k].type);
+      }
+    </script>
+  </body>
+</html>
