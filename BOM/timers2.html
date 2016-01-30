@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="scope">setTimeout() 실행</button>
+
+    <script type="text/javascript">
+      var scopeObj = {
+        value: 100,
+        get: function(param) {
+          this.value = this.value + param + 5;
+          js.log("setTimeout : ", this.value);
+          window.clearTimeout(window.timerID);
+        }
+      }
+      get("scope").onclick = function() {
+        window.timerID = delay(scopeObj.get, scopeObj, 1000, 20);
+      }
+
+      // fn은 핸들러 함수
+      // scope는 핸들러 함수의 this로 설정해주기 위해 전달
+      // 파라미터에 제한을 두지 않기 위해 arguments 사용
+      function delay(fn, scope, time) {
+        // Array의 앞에 3개를 제외하고 Array 리스트를 반환
+        var params = Array.prototype.slice.call(arguments, 3);
+        return setTimeout(function() {
+          // apply를 사용하면 this로 사용할 대상을 인자로 지정할 수 있다.
+          return fn.apply(scope || window, params);
+        }, time || 1000);
+      }
+    </script>
+
+    <script type="text/javascript">
+      // call 사용 remind
+      // 파라미터 : this로 참조할 오브젝트, 호출된 함수로 넘겨줄 파라미터 (opt)
+      var value = 100;
+      var get = function(one) {
+        var value = 456;
+        return one + this.value;
+      }
+      // get을 call을 사용하지 않고 그대로 호출할 경우 this 바인딩은 global object
+      // call 함수의 첫번재 인자로 전달한 this가 this 바인딩에 들어간다. (여기서는 this를 넘겼으므로 그대로 global object)
+      js.log(get.call(this, 50));
+
+      var get2 = function(value) {
+        return this.base * this.rate + value;
+      }
+
+      // 첫번째 인자로 오브젝트를 넘겼으므로 해당 오브젝트가 this 바인딩 됨.
+      var result = get2.call({base: 20, rate: 30}, 50);
+      js.log(result);
+
+      var get3 = function() {
+        return this.valueOf;
+      }
+
+      // 숫자 값을 넘겨주면 Number 오브젝트로 변환 후 해당 값을 primitive 값으로 설정
+      result = get3.call(123);
+      js.log(result);
+
+
+      // bind()에 관련된 내용도 필수로 숙지 해야 한다.
+    </script>
+  </body>
+</html>

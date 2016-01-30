@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <select id="sports" size=4>
+      <option id="id11" value="11">축구</option>
+      <option id="id12" value="12" selected>농구</option>
+      <option id="id21" value="21">수영</option>
+      <option id="id22" value="22">마라톤</option>
+    </select>
+
+    <script type="text/javascript">
+      var selectNode = get("sports");
+      js.log("length : ", selectNode.length);
+      js.log("selectIndex : ", selectNode.selectIndex);
+      js.log("item(1).id : ", selectNode.item(1).id);
+
+      if(selectNode.namedItem) {
+        js.log("namedItem('id12') : ", selectNode.namedItem("id12").textContent);
+      } else {
+        js.log("namedItem()을 지원하지 않음.")
+      }
+    </script>
+  </body>
+</html>

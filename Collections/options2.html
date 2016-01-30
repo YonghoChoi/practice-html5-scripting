@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="addID">add() 실행</button>
+    <button type="button" id="removeID">remove() 실행</button>
+    <br><br>
+    <select id="sports" size=4>
+      <option id="id11" value="11">축구</option>
+      <option id="id12" value="12" selected>농구</option>
+      <option id="id21" value="21">수영</option>
+      <option id="id22" value="22">마라톤</option>
+    </select>
+
+    <script type="text/javascript">
+      var selectNode = get("sports");
+      var addNode = get("addID");
+      addNode.onclick = function() {
+        var node = document.createElement("option");
+        node.textContent = "ADD";
+        selectNode.add(node, 1);
+      }
+
+      var removeNode = get("removeID");
+      removeNode.onclick = function() {
+        selectNode.remove(1);
+      }
+    </script>
+  </body>
+</html>

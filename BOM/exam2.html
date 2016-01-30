@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="scope">실행</button>
+
+    <!--
+      1에서 20까지 반복
+      반복 할 때마다 반복 값을 누적하여 출력
+      1, 1+2=3, 3+3=6, 6+4=10의 형태
+      this로 누적 변수를 참조할 수 있도록 코드 작성
+    -->
+    <script type="text/javascript">
+      var scopeObj = {
+        value: 0,
+        sum : 0,
+        get: function() {
+          this.value = this.value + 1;
+          if(this.sum !== 0) {
+              js.log(this.sum + " + " + this.value + "= " + (this.value + this.sum));
+          } else {
+            js.log(this.value);
+          }
+          this.sum = this.value + this.sum;
+
+          if(this.value === 20) {
+              window.clearInterval(timerID);
+              js.log("최종 누적 값 : " + this.sum);
+          }
+        }
+      }
+      get("scope").onclick = function() {
+        window.timerID = interval(scopeObj.get, scopeObj, 100);
+      }
+
+      function interval(fn, scope, interval) {
+        var params = Array.prototype.slice.call(arguments, 3);
+        return setInterval(function() {
+          return fn.apply(scope || window, params);
+        }, interval || 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/mynote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id=id1></div>
+    <p id=id2></p>
+    <script type="text/javascript">
+      var el = get("id1");
+      el.textContent = "test";
+
+      var node = selector("p");
+      node.textContent = "test2";
+    </script>
+  </body>
+</html>

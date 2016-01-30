@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="set">setTimeout() 실행</button>
+    <button type="button" id="clear">clearTimeout() 실행</button>
+
+    <script type="text/javascript">
+      var count = 0, timerID;
+      get("set").onclick = function() {
+        timerID = window.setTimeout(execTimeout, 1000);
+      }
+
+      function execTimeout() {
+        js.log("count : ", ++count);
+      }
+
+      get("clear").onclick = function() {
+        
+      }
+    </script>
+  </body>
+</html>

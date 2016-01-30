@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <iframe src="bom.html" width="230" height="100"></iframe>
+
+    <script type="text/javascript">
+      js.log("window.frames : ", window.frames);
+
+      // <iframe>를 작성했으므로 1이 반환된다.
+      js.log("window.length : ", window.length);
+
+      // PC에서 실행하면 권한 에러가 발생하므로 서버에서 실행해야 한다.
+      js.log("");
+      js.log("--- window[0] ---");
+      var zeroObj = window[0];
+      js.log("window[0] : ", window[0]);
+      js.log("window[0].innerWidth : ", window[0].innerWidth);
+      js.log("window[0].innerHeight : ", window[0].innerHeight);
+
+      js.log("");
+      js.log("--- window[0].top ---");
+      js.log("window[0].top : ", zeroObj.top);
+      js.log("window[0].top.innerWidth : ", zeroObj.innerWidth);
+
+      js.log("");
+      js.log("--- window[0].parent ---");
+      js.log("window[0].parent : ", zeroObj.parent);
+      js.log("window[0].parent.innerWidth : ", zeroObj.parent.innerWidth);
+      js.log("window[0].parent.innerHeight : ", zeroObj.innerHeight);
+
+      js.log("");
+      js.log("--- window ---");
+      js.log("window.top : ", window.top);
+      js.log("window.top.innerWidth : ", window.top.innerWidth);
+
+      // 다른 window가 현재 window을 열었을 때 open한 window를 반환
+      // 다른 window가 열지 않은 window이면 null 반환
+      js.log("window[0].opener : ", zeroObj.opener);
+      if(zeroObj.opener) {
+        js.log("window[0].opener.innerWidth : ", zeroObj.opener.innerWidth);
+      }
+      js.log("");
+      var element = zeroObj.frameElement;
+      js.log("window[0].frameElement.innerWidth : ", element.width);
+    </script>
+  </body>
+</html>

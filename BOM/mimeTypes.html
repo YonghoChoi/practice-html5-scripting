@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var types = window.navigator.mimeTypes;
+      js.log("mimeTYpes.length : ", types.length);
+
+      js.log("MimeType 정보");
+
+      var obj = types.item(6);
+      js.log("type : ", obj.type);
+      js.log("description : ", obj.description);
+      js.log("suffixes : ", obj.suffixes);
+      js.log("enabledPlugin.names : ", obj.enabledPlugin.name);
+    </script>
+  </body>
+</html>

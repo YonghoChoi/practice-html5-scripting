@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="scope">setInterval() 실행</button>
+    <button type="button" id="clear">clearInterval() 실행</button>
+
+    <script type="text/javascript">
+      var scopeObj = {
+        value: 100,
+        get: function() {
+          this.value = this.value + 5;
+          js.log("setInterval : ", this.value);
+        }
+      }
+      get("scope").onclick = function() {
+        window.timerID = delay(scopeObj.get, scopeObj, 1000);
+      }
+
+      function delay(fn, scope, interval) {
+        // Array의 앞에 3개를 제외하고 Array 리스트를 반환
+        var params = Array.prototype.slice.call(arguments, 3);
+        return setInterval(function() {
+          // apply를 사용하면 this로 사용할 대상을 인자로 지정할 수 있다.
+          return fn.apply(scope || window, params);
+        }, interval || 1000);
+      }
+
+      get("clear").onclick = function() {
+        window.clearInterval(timerID);
+        js.log("clearInterval")
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      js.log("javaEnabled() : ", window.navigator.javaEnabled());
+
+      var plugins = window.navigator.plugins;
+      js.log("plugins.length : ", plugins.length);
+
+      js.log("----두 번째 플러그인 정보");
+      var obj = plugins.item(1);
+      js.log("name : ", obj.name);
+      js.log("description : ", obj.description);
+      js.log("filename : ", obj.filename);
+      js.log("length : ", obj.length);
+    </script>
+  </body>
+</html>

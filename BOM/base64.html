@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script>
+      var encodeValue = window.btoa("abcde 12345");
+      js.log("base64 인코딩 : ", encodeValue);
+
+      var decodeValue = window.atob(encodeValue);
+      js.log("base64 디코딩 : ", decodeValue);
+    </script>
+  </body>
+</html>
