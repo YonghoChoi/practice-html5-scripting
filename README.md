@@ -30,15 +30,15 @@
 |분류|개요|
 |----|----|
 |Document|Collections, metadata 속성, DOM 트리 프로퍼티, markup 생성|
-|HTMLElement|<img> 생성, <img> 전송, <select/option>, <textarea>|
-|Input|<input> 속성과 메소드|
+|HTMLElement|\<img\> 생성, \<img\> 전송, \<select/option\>, \<textarea\>|
+|Input|\<input\> 속성과 메소드|
 |확장 API|Text Field Selection, Constraint Validation, Session history, Location|
 |BOM|BOM 개요, 브라우징 콘텍스트, prompt, Timers, Base64, Navigator|
 |CSSOM|MediaList, CSSOM 인터페이스, Document 확장, Window 확장|
 |CSSOMView|MediaQueryList, window, Document, Element|
 
 * Document는 Doctype 부터 끝까지
-* HtmlElement는 <head>부터 끝까지
+* HtmlElement는 \<head\>부터 끝까지
 * BOM은 표준이 아님
 
 ## S/W의 최종 목적
@@ -52,7 +52,7 @@
 * Document Object Model
 
 * Document
-  * <!DOCTYPE html> ~ </html>
+  * \<!DOCTYPE html\> ~ \</html\>
     * html 파일 전체
 
 * Object
