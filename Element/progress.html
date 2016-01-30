@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button>진행 값 증가</button>
+    <p id=rate>진행 30%</p>
+    <progress value=30 max=100></progress>
+
+    <script type="text/javascript">
+      var node = selector("progress");
+      js.log("value : ", node.value);
+      js.log("max : ", node.max);
+      js.log("position : ", node.position);
+
+      js.log("클릭할 때마다 10씩 증가");
+      var rateNode = get("rate");
+      selector("button").onclick = function(event) {
+        node.value = Number(node.value) + 10;
+        rateNode.textContent = "진행" + (node.value * 100 / node.max) + "%";
+        js.log("position : ", node.position)
+      }
+    </script>
+  </body>
+</html>

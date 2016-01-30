@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type="button" id="clickButton">이미지 추가 클릭</button>
+    <p id=addImage></p>
+
+    <script type="text/javascript">
+      get("clickButton").onclick = function(event) {
+        var obj = new Image();
+        obj.src = "https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjGj7PD-tDKAhUiK6YKHe0dCTsQjRwIAw&url=http%3A%2F%2Fkirinyaga.tistory.com%2F23&psig=AFQjCNGUPJly1pL0VCVyohWw1sHoj308NA&ust=1454223418282497";
+        obj.id = "imageID";
+
+        var el = get("addImage");
+        el.appendChild(obj);
+
+        // 로딩 시간이 걸리므로 이 시점에서는 false 출력
+        js.log("complete : ", obj.complete);
+
+        setTimeout(function() {
+          js.log("1초 후 체크 : ", obj.complete);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

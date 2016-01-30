@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <form id=formID action="entryConfirm.html" method="post">
+      <input type="radio" name="sports" id=soccer>
+      <label for="soccer">축구</label>
+      <input type="radio" name="sports" id=baseball>
+      <label for="baseball">야구</label>
+    </form>
+
+    <script type="text/javascript">
+      var node = document.getElementsByTagName("label").item(0);
+      js.log("htmlFor : ", node.htmlFor);
+
+      js.log("control.id : ", node.control.id);
+      js.log("control.type : ", node.control.type);
+      js.log("form.id : ", node.form.id);
+    </script>
+  </body>
+</html>

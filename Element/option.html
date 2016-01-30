@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p><button>option 추가</button></p>
+    <form action="">
+      <select id="sports" size=4 multiple>
+        <option id="id1" value="1" selected>축구</option>
+        <option id="id2" value="2">농구</option>
+      </select>
+    </form>
+
+    <script type="text/javascript">
+      var node = selector("select");
+      var options = node.options;
+      for(var k = 0; k < options.length; k++) {
+        js.log("index : ", options[k].index);
+        js.log("text : ", options[k].text);
+        js.log("defaultSelected : ", options[k].defaultSelected);
+        js.log("form : ", options[k].form.nodeName);
+      }
+      selector("button").onclick = function(event) {
+        var optionNode = new Option("추가한 것", "add", true, true);
+        node.appendChild(optionNode);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" id="clickID">버튼 클릭</button>
+    <button type="button" id="focusID">focus 클릭</button>
+    <button type="button" id="blurID">blur 클릭</button>
+    <p>
+      <label>음악 : <input id=music size=5></label>
+      <label>스포츠 : <input id=sports size=5></label>
+    </p>
+
+    <script type="text/javascript">
+      var clickNode = get("clickID");
+      clickNode.onclick = function(event) {
+        js.log("#clickID : ", event.target.id);
+        js.log("pageX : ", event.pageX, ", pageY : ", event.pageY);
+      }
+      clickNode.click();
+      var sportsNode = get("sports");
+      get("focusID").onclick = function(event) {
+        sportsNode.focus();
+        js.log("focus()");
+      }
+      get("blurID").onclick = function(event) {
+        sportsNode.blur();
+        js.log("blur()");
+      }
+    </script>
+  </body>
+</html>

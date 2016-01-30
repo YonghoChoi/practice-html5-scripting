@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button id=submitClick>submit() 실행</button>
+    <button id=resetClick>reset() 실행</button>
+    <form action="entryConfirm.html" method="post" target="_blank">
+      <label><input type="checkbox" name="soccer">축구</label>
+      <label><input type="checkbox" name="baseball">야구</label>
+    </form>
+
+    <script type="text/javascript">
+      // Form Control의 모든 엘리먼트를 HTMLFormControlsCollection으로 반환
+      var formNode = document.forms[1];
+      js.log("elements.length : ", formNode.elements.length);
+
+      // form에서 인덱스 번째의 엘리먼트를 반환
+      js.log("formNode[1].name : ", formNode[1].name);
+
+      // id 또는 name이 일치하는 엘리먼트 반환
+      js.log("type : ", formNode["soccer"].type);
+
+      get("submitClick").onclick = function(event) {
+        formNode.submit();
+        js.log("submit() 실행");
+      }
+
+      get("resetClick").onclick = function(event) {
+        formNode.reset();
+        js.log("reset() 실행");
+      }
+    </script>
+  </body>
+</html>
