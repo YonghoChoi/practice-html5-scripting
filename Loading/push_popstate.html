@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pushpopstate</title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button>서버에서 데이터 수신</button>
+    <script type="text/javascript">
+      var openTitle = document.title;
+      var pageIndex = 0;
+      // "서버에서 데이터 수신" 버튼을 클릭할 때마다 실행
+      selector("button").onclick = function(event) {
+        pageIndex++;
+        var eventPass = {   // 이벤트가 발생했을 때 넘겨줄 데이터
+          page: pageIndex,
+          value: "value : " + pageIndex
+        }
+        document.title = "페이지: " + pageIndex;
+        window.history.pushState(eventPass, document.title, "?page=" + pageIndex);
+        js.log("page count: ", pageIndex);
+      };
+
+      // "이전/다음" 버튼을 누를 때마다 실행
+      window.onpopstate = function(event) {
+        // 해당 이벤트는 페이지 전체를 캐싱하는 방식은 아니고 pushState 수행시 전달한 데이터를 제공하는 역할만 한다.
+        // 그러므로 페이지를 재구성하는 것은 이 함수 내에서 처리해주어야 한다.
+        if(event.state) {
+          document.title = "페이지 : " + event.state.page;
+          js.log("state : ", event.state.value);
+        } else {
+          document.title = openTitle;
+          js.log("state : ", openTitle);
+        }
+      }
+    </script>
+  </body>
+</html>

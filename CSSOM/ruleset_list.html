@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style id=styleNode>
+      ul {
+        position: fixed;
+        top: 100px;
+        left: 50px;
+      }
+      li {
+        background: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>스포츠</li>
+      <li>책</li>
+    </ul>
+    <script type="text/javascript">
+      // <style id="styleNode"></style>에 작성한 룰셋을 출력
+      // CSSStyleSheet 반환
+      var sheetObj = get("styleNode").sheet;
+
+      // CSSRuleList 반환
+      var ruleList = sheetObj.cssRules;
+      for(var k = 0; k < ruleList.length; k++) {
+        js.log("cssRules.cssText : ", ruleList[k].cssText);
+      }
+    </script>
+  </body>
+</html>

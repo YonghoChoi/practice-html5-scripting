@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style>
+      #cssstyle {
+        position: fixed; top: 100px; left: 100px;
+        border: solid 2px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id=cssstyle style="font-size: 17px">CSSStyleDeclaration</div>
+    <script type="text/javascript">
+      var styleObj = get("cssstyle").style;
+      styleObj["border-left-color"] = "blue";
+      //styleObj["borderLeftColor"] = "red";
+      js.log("변경전 cssText : ", styleObj.cssText);
+
+      styleObj.setProperty("font-weight", "bold", "important");
+      js.log("setProperty() 후 : ", styleObj.cssText);
+
+      var remove = styleObj.removeProperty("fontSize");
+      js.log("removeProperty('fontSize') : ", remove);
+      remove = styleObj.removeProperty("font-size");
+      js.log("removeProperty('font-size') : ", remove);
+    </script>
+  </body>
+</html>

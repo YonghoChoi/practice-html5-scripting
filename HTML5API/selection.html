@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p><button id=select>구간 지정 선택</button></p>
+    <input value="가나다라마바사">
+
+    <script type="text/javascript">
+      var node = selector("input");
+      get("select").onclick = function(event) {
+        node.selectionStart = 2;
+        node.selectionEnd = 6;
+        node.focus();
+
+        js.log("selectionStart : ", node.selectionStart);
+        js.log("selectionEnd : ", node.selectionEnd);
+        js.log("selectionDirection : ", node.selectionDirection);
+      }
+    </script>
+  </body>
+</html>

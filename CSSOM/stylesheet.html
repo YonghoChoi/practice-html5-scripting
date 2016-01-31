@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- link에 title을 넣은 이유? -->
+    <link id="cssomID" rel="stylesheet" href="css/cssom.css" media="screen, print" title="링크 타이틀">
+    <ul>
+      <li id=sports>스포츠</li>
+      <li id=book>책</li>
+    </ul>
+
+    <script type="text/javascript">
+      var sheetObj = get("cssomID").sheet;
+      js.log("type : ", sheetObj.type);
+      js.log("href : ", sheetObj.href);
+
+      js.log("title : ", sheetObj.title);
+      js.log("ownerNode.nodeName : ", sheetObj.ownerNode.nodeName);
+      js.log("parentStyleSheet : ", sheetObj.parentStyleSheet);
+      js.log("media.mediaText : ", sheetObj.media.mediaText);
+      js.log("disabled : ", sheetObj.disabled);
+    </script>
+  </body>
+</html>

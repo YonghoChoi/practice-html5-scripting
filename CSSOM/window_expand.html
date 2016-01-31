@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <style>
+      #sports {
+        background-color: lime;
+      }
+    </style>
+    <div id=sports style="font-size: 20px">스포츠</div>
+
+    <script type="text/javascript">
+      var el = get("sports");
+      // 디폴트 값이 적용된 프로퍼티가 반환됨
+      var items = window.getComputedStyle(el);
+      js.log("프로퍼티 수 : ", items.length);
+
+      // inline에 작성한 스타일 프로퍼티
+      // 디폴트 값을 대체하여 엘리먼트에 적용된 값이 반환됨
+      js.log(items.getPropertyValue("font-size"));
+
+      // <style>에 작성한 프로퍼티
+      js.log(items.getPropertyValue("background-color"));
+    </script>
+  </body>
+</html>

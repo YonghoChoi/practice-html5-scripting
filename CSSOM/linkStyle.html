@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style id="styleNode">
+      #divNode {
+        top: 100px;
+        left: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <link id="cssomID" rel="stylesheet" href="css/cssom.css" media="screen and (color), print">
+    <div id=divNode style="font-size: 17px">LinkStyle</div>
+
+    <script type="text/javascript">
+      // <style>과 <link>는 sheet 프로퍼티를 제공하나 <div>는 제공하지 않는다.
+
+      // <style>
+      var node = get("styleNode");
+      js.log("<style> sheet : ", node.sheet);
+
+      // <link>
+      node = document.getElementsByTagName("link").item(0);
+      js.log("<style> sheet : ", node.sheet);
+
+      for(var str in node.sheet) {
+        js.log(str);
+      }
+
+      // <div>
+      node = get("divNode");
+      js.log("<div> sheet : ", node.sheet);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button>클릭</button>
+    <script type="text/javascript">
+      js.log(window.location);
+      js.log("typeof : ", typeof window.location);
+
+      js.log("--location 오브젝트 프로퍼티");
+      var doc = document.location;
+      js.log("href : ", doc.href);
+      js.log("hostname : ", doc.hostname);
+      js.log("host : ", doc.host);
+      js.log("hash : ", doc.hash);
+      js.log("port : ", doc.port);
+      js.log("origin : ", doc.origin);
+      js.log("protocol : ", doc.protocol);
+      js.log("search : ", doc.search);
+
+      // 버튼을 클릭하면 지정한 URL로 이동
+      selector("button").onclick = function(event) {
+        window.location = "http://www.corechain.com/lec/html5/load_23_url.html";
+      }
+    </script>
+  </body>
+</html>

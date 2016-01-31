@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <form>
+      <label>주문 수량 : <input type="text" name=order size=10 required></label>
+      <input type="submit" value="전송">
+    </form>
+
+    <script type="text/javascript">
+      var node = selector("[name=order]");
+      selector("[type=submit]").onclick = function(event) {
+        node.setCustomValidity(""); // 에러 메시지를 빈 무자열로 해놔야 값을 정상적으로 입력했을 때 checkvalidity에서 true를 반환한다.
+        if(node.checkValidity()) {
+          event.preventDefault();
+          js.log("입력 값 정상")
+        } else {
+          event.preventDefault();
+          //표시할 메시지 변경
+          node.setCustomValidity("값을 입력하세요.")
+          js.log("에러 메시지 : ", node.validationMessage);
+        }
+      }
+    </script>
+  </body>
+</html>

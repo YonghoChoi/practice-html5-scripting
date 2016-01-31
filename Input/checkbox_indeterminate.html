@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <lable>체크 : <input type="checkbox"></lable>
+    <button id=execClick>클릭</button>
+    <script type="text/javascript">
+      var node = selector("[type=checkbox]");
+      get("execClick").onclick = function(event) {
+        if(node.indeterminate) {
+          node.indeterminate = false;
+          node.checked = true;
+        } else {
+          node.indeterminate = true;
+        }
+        js.log("indeterminate : ", node.indeterminate);
+      }
+    </script>
+  </body>
+</html>

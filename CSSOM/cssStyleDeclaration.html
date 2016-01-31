@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style>
+      #cssstyle {
+        position: fixed; top: 100px; left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id=cssstyle style="font-size 17px">CSSStyleDeclaration</div>
+    <script type="text/javascript">
+      /*
+        <style>, <link> 이외 엘리먼트의 style 프로퍼티는 엘리먼트에 직접 작성한 것만 반환하며
+        <style>에 작성한 것은 반환하지 않는다.
+      */
+      var styleObj = get("cssstyle").style;
+      js.log("length : ", styleObj.length);
+      js.log("cssText : ", styleObj.cssText);
+      js.log("item(1) : ", styleObj.item(1));
+    </script>
+  </body>
+</html>

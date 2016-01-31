@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <link id="cssomID" rel="stylesheet" href="css/cssom.css" media="screen and (color), print">
+
+    <script type="text/javascript">
+      var medialist = get("cssomID").sheet.media;
+      js.log("mediaText : ", medialist.mediaText);
+
+      for(var k = 0; k < medialist.length; k++) {
+        js.log("item(k) : ", medialist.item(k));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style id=styleNode>
+      ul {
+        top: 100px;
+        left: 50px;
+      }
+      li {
+        background: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="css/cssom.css">
+    <ul>
+      <li>스포츠</li>
+      <li>책</li>
+    </ul>
+    <script type="text/javascript">
+      var sheetList = document.styleSheets;
+      for(var k = 0; k < sheetList.length; k++) {
+        var sheet = sheetList[k];
+        js.log(sheet.ownerNode.nodeName);
+      }
+      js.log(document.selectedStyleSheetSet);
+      js.log(document.lastStyleSheetSet);
+      js.log(document.preferredStyleSheetSet);
+      js.log(document.styleSheetSets);
+    </script>
+  </body>
+</html>

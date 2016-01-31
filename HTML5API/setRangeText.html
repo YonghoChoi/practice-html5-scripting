@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p><button id=select>텍스트 설정</button></p>
+    <input value="가나다라마바사">
+
+    <script type="text/javascript">
+      var node = selector("input");
+      node.focus();
+      get("select").onclick = function(event) {
+        // 위치가 선택되어 있어도 값 대체는 파라미터 기준으로 한다.
+        // 단, 대체 후 선택상태는 작은 값과 큰 값을 반영
+        // option : select, start, end, preserve(default)
+        node.setRangeText("대체한 값", 2, 6, "select");
+      }
+    </script>
+  </body>
+</html>
