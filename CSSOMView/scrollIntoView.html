@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style media="screen">
+      #choiceButton {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+      }
+      #content {
+        position: absolute;
+        left: 100px;
+        top: 150px;
+        border: 2px solid blue;
+        width: 200px;
+        height: 100px;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div id=choiceButton>
+      <button id=alignTop>위에 표시</button>
+      <button id=alignBottom>아래에 표시</button>
+    </div>
+    <div id="content">
+      <div style="height: 100px"></div>
+      <div id="showText">텍스트 표시</div>
+      <div style="height: 100px"></div>
+    </div>
+
+    <script type="text/javascript">
+      var node = get("showText");
+      var topNode = get("alignTop");
+      topNode.addEventListener("click", function() {
+        node.scrollIntoView(true);
+      }, false);
+
+      var bottomNode = get("alignBottom");
+      bottomNode.addEventListener("click", function() {
+        node.scrollIntoView(false);
+      }, false);
+    </script>
+  </body>
+</html>

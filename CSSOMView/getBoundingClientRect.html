@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style media="screen">
+      #wrap {
+        position: absolute;
+        top: 70px;
+        left: 50px;
+      }
+      #clientRect {
+        position: relative;
+        top: 30px;
+        left: 30px;
+        border: 5px solid blue;
+        padding: 5px;
+        width: 200px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="clientRect"></div>
+    </div>
+
+    <script type="text/javascript">
+      var rectObj = get("clientRect").getBoundingClientRect();
+      js.log("width : ", rectObj.width);
+      js.log("height : ", rectObj.height);
+
+      js.log("top : ", rectObj.top);
+      js.log("left : ", rectObj.left);
+
+      js.log("right : ", rectObj.right);
+      js.log("bottom : ", rectObj.bottom);
+    </script>
+  </body>
+</html>

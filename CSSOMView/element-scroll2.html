@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style media="screen">
+      #parentSports {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        border: 2px solid blue;
+        width: 200px;
+        height: 100px;
+        overflow: scroll;
+      }
+      #sports {
+        width: 500px; height: 150px; padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id=parentSports>
+      <div id=sports></div>
+    </div>
+    <div id=topID></div>
+    <div id=leftID></div>
+
+    <script type="text/javascript">
+      // scrollTop, scrollLeft에 값을 할당하면 스크롤바 이동, 이벤트 발생
+      var leftNode = get("leftID");
+      var topNode = get("topID");
+      var scrollNode = get("parentSports");
+
+      scrollNode.addEventListener("scroll", function() {
+        topNode.textContent = "scrollTop : " + scrollNode.scrollTop;
+        leftNode.textContent = "scrollLeft : " + scrollNode.scrollLeft;
+      }, false);
+
+      scrollNode.scrollTop = 70;
+      scrollNode.scrollLeft = 100;
+    </script>
+  </body>
+</html>

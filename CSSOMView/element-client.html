@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style media="screen">
+      .sports {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 5px;
+        width: 200px;
+        height: 50px;
+      }
+
+      .scroll {
+        top: 200px;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sports" class=sports>스크롤 없음</div>
+    <div id="sportsScroll" class="sports scroll">스크롤 있음</div>
+
+    <script type="text/javascript">
+      // width(200px) + padding(10px * 2)
+      var el = get("sports");
+      show(el);
+      js.log("--------");
+
+      // width(200px) + padding(10px * 2) - overflow(scroll:17px)
+      el = get("sportsScroll");
+      show(el);
+      function show(el) {
+        js.log("clientWidth : " + el.clientWidth);
+        js.log("clientHeight : " + el.clientHeight);
+        js.log("clientTop : " + el.clientTop);
+        js.log("clientLeft : " + el.clientLeft);
+      }
+    </script>
+  </body>
+</html>

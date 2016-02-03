@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+    <style media="screen">
+      #clientRect {
+        top: 100px;
+        left: 70px;
+        border: 1px solid blue;
+        width: 200px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clientRect">
+      <span id="spanRect">가나다라 마바사 아자차 카타파하 가나다라 마바사 아자차 카타파하</span>
+    </div>
+
+    <script type="text/javascript">
+      var el = get("spanRect");
+      var rectList = el.getClientRects();
+
+      for(var k = 0; k < rectList.length; k++) {
+        var rect = rectList[k];
+        js.log("width : ", rect.width);
+        js.log("height : ", rect.height);
+
+        js.log("top : ", rect.top);
+        js.log("left : ", rect.left);
+        js.log("right : ", rect.right);
+        js.log("bottom : ", rect.bottom);
+        js.log("---------");
+      }
+    </script>
+  </body>
+</html>

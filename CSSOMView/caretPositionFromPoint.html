@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onclick = function(e) {
+        if(document.caretPositionFromPoint) {
+          var obj = document.caretPositionFromPoint(e.clientX, e.clientY);
+          js.log("id : ", obj.offsetNode.id);
+          js.log("textContent : ", obj.offsetNode.textContent);
+          js.log("offset : ", obj.offset);
+        } else {
+          js.log("2016.1.30 기준 firefox 지원");
+        }
+      }
+    </script>
+  </body>
+</html>
